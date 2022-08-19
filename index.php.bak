@@ -1,4 +1,7 @@
+<?php  session_start(); ?>
+
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -8,9 +11,10 @@ $conn = new mysqli("localhost" , $username, $password, "MysqlCrudApplication");
 // Check connection
 if ($conn->connect_error) {
     
-  #header("Location:loginFailed.php");  
-             
+  header("Location:loginFailed.php");  
   
+  echo "Index error";
+    
 }else{
     
     $sqlRegisteration  = "CREATE TABLE `register` (`firstname` varchar(100) NOT NULL,`lastname` varchar(100) NOT NULL,`email` varchar(100) NOT NULL,`address` varchar(100) NOT NULL,
@@ -78,38 +82,7 @@ if ($conn->connect_error) {
 
 <?php  
 
-//start a  session
-session_start();
-
-require_once('Database.php'); 
-
-new Database();
-
-
 $message = "";
-
-// if($_REQUEST["message"] != null){
-   
-   // $message  =  "User  don't  exist please  signup  for  an  account"; 
-// }
-
-// if($_REQUEST["success"] != null){
-   
-   // $message  =  "You have  successful  registered and  thank  you"; 
-// }
-
-// if($_REQUEST["logout"] != null){
-   
-   // $message  =  "You have  successful  logged  out please visit  again"; 
-// }
-
-
-// if(isset($_SESSION["login_error"]) )
-// {
-  
-  // $message  =   $_SESSION["login_error"];
-
-// }
 
 ?>
 <!DOCTYPE HTML>

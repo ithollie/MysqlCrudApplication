@@ -34,10 +34,10 @@
 	
 	$dbposts   =  mysqli_query($conn , "SELECT * FROM  `blogs`") or die($conn->error);
 	
-	#echo  $_SESSION['email'] .  "hello  people";
+	echo  $_SESSION['email'] .  "hello  people";
 	
 	#login user  posts
-	$dbUserPosts   =  mysqli_query($conn, "SELECT *  FROM `blogs` WHERE  email='".$session."' ORDER  BY  `title`") or die($conn->error);
+	$dbUserPosts   =  mysqli_query($conn, "SELECT *  FROM `blogs` WHERE  email='".$_SESSION['email']."' ORDER  BY  `title`") or die($conn->error);
 	
 	$loginUserPostItems   = mysqli_fetch_assoc($dbUserPosts);
 	

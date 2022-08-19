@@ -1,3 +1,4 @@
+<?php  session_start(); ?>
 <?php  
 
     $message = "Login Failed please see  the  tech  people";

@@ -1,17 +1,18 @@
-<?php  require_once( 'Application.php'); ?>
+<?php  session_start(); ?>
+
+<?php  #require_once( 'Application.php'); ?>
 
 <?php
 
-    //start a  session
-    session_start();
-
-    $data  = new Application();
+	
+    #$data  = new Application();
     
-    echo "page "; 
     // if  the   email  and   password is  post
+	
     if (isset($_POST["email"]) && isset($_POST["password"])) {
         
-        //http session
+        //http sessions
+		
         $_SESSION['email'] = $_POST["email"];
         $_SESSION['password'] =  $_POST["password"];
         
@@ -35,8 +36,10 @@
              
              saveUserId($row['id']);
               
-            if (password_verify($_POST["password"], $row['password']) &&  $row['admin'] !="true") {
-                 
+            if (password_verify($_POST["password"], $row['password'])) {
+                
+				$_SESSION["email"] = $_POST["email"];
+				
                 header("Location:home.php?id=".$row['id']);
             
             }elseif(password_verify($_POST["password"], $row['password']) &&  $row['admin'] === "true") {
@@ -53,7 +56,7 @@
                     
         }else{
             
-            header("Location:home.php?message='error'");  
+            header("Location:loginFailed.php?message='error'");  
           
         }
         
@@ -66,15 +69,11 @@
    
     function  saveUserId($id){
         
-        session_start();
-		
         $_SESSION['USER_ID'] = $id;
     }
     
     function  getUserId($id){
         
-        session_start();
-		
         return  $_SESSION['USER_ID'];
     
     }

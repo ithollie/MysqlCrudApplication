@@ -1,9 +1,9 @@
+ <?php  session_start(); ?>
  
 <?php   include'Application.php'; ?>
 
 <?php
 
-    session_start();
    
     $condition  =  false;
     $_databaseName = "MysqlCrudApplication";
@@ -44,7 +44,7 @@
                     
                     mysqli_query($conn ,  $sql) or die($conn->error);
                     
-                    header("Location:index.php?success='true'");
+                    header("Location:home.php?success='true'");
                    
             
                 }else{
@@ -61,6 +61,7 @@
     
         }
     }else{
+		
         echo  " User already  exist";
     }
     $conn->close();

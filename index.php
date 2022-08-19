@@ -1,4 +1,6 @@
+
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -79,38 +81,7 @@ if ($conn->connect_error) {
 
 <?php  
 
-//start a  session
-session_start();
-
-require_once('Database.php'); 
-
-new Database();
-
-
 $message = "";
-
-// if($_REQUEST["message"] != null){
-   
-   // $message  =  "User  don't  exist please  signup  for  an  account"; 
-// }
-
-// if($_REQUEST["success"] != null){
-   
-   // $message  =  "You have  successful  registered and  thank  you"; 
-// }
-
-// if($_REQUEST["logout"] != null){
-   
-   // $message  =  "You have  successful  logged  out please visit  again"; 
-// }
-
-
-// if(isset($_SESSION["login_error"]) )
-// {
-  
-  // $message  =   $_SESSION["login_error"];
-
-// }
 
 ?>
 <!DOCTYPE HTML>

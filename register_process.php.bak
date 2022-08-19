@@ -8,7 +8,7 @@
     $condition  =  false;
     $_databaseName = "MysqlCrudApplication";
 	  
-    $conn =  new mysqli("localhost", "root", "",$this->_databaseName);
+    $conn =  new mysqli("localhost", "root", "",$_databaseName);
         
     $firstname   =  $_POST["firstname"];
     $lastname    =  $_POST["lastname"];
@@ -44,7 +44,7 @@
                     
                     mysqli_query($conn ,  $sql) or die($conn->error);
                     
-                    header("Location:index.php?success='true'");
+                    header("Location:home.php?success='true'");
                    
             
                 }else{
@@ -61,6 +61,7 @@
     
         }
     }else{
+		
         echo  " User already  exist";
     }
     $conn->close();

@@ -1,3 +1,4 @@
+<?php  session_start(); ?>
 <?php
      class Database{
 
@@ -43,10 +44,12 @@
     
 
         }
+		
         function  close(){
 
             $this->conn->close();
         }
+		
         function blogTable(){
 
             
@@ -69,8 +72,6 @@
 
         }
         function  userPasswordExist($email,  $password){
-
-          
 
             $sql = "SELECT *  FROM `register` WHERE email='".$email."'";  
             
@@ -255,17 +256,17 @@
             }
             if(mysqli_num_rows($re) > 0){
 
-                //echo "Error: " . $sqltest . "<br>" . $this->conn->error;
-
                 return   false;
             }
             return  false;
 
         }
+		
         function getByName() {
 
             return $this->name;
         }
+		
         function deletePost($id){
             
             $sql = "DELETE  FROM `blogs`  WHERE id='".$id."'";
