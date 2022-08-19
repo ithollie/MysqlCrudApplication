@@ -60,7 +60,6 @@
     }else{
         
         header("Location:login.php");  
-		
 		echo "Login process   error";
     }
    

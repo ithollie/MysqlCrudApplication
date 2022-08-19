@@ -8,7 +8,7 @@
     $condition  =  false;
     $_databaseName = "MysqlCrudApplication";
 	  
-    $conn =  new mysqli("localhost", "root", "",$_databaseName);
+    $conn =  new mysqli("localhost", "root", "",$this->_databaseName);
         
     $firstname   =  $_POST["firstname"];
     $lastname    =  $_POST["lastname"];
